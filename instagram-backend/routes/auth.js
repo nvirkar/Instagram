@@ -33,7 +33,7 @@ router.post("/register", async (req, res) => {
     [username, email, hashedPassword],
     (err, result) => {
       if (err) return res.status(500).json({ error: err.message });
-      res.json({ message: "User registered successfully!" });
+      res.status(201).json({ message: "User registered successfully!" }); // 201: Created
     }
   );
 });
